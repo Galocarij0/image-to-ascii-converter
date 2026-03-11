@@ -6,12 +6,15 @@
 int main(){
     
     // Declaração das variáveis da imagem
-    int largura, altura, quant_canais;
-    char* imagem_load = stbi_load("shower_baby.png", &largura, &altura, &quant_canais, 0); // Fixação dos valores
+    int pLargura, pAltura, pQuant_canais;
+    unsigned char *data = stbi_load("shower_baby.png", &pLargura, &pAltura, &pQuant_canais, 3); // Fixação dos valores
 
+    
     // Printa os valores que acl função stbi_load() econtrou acima
-    printf("Largura: %d pixels, Altura: %d pixels, Canais: %d\n", largura, altura, quant_canais);
+    printf("%d %d %d \n",pLargura, pAltura, pQuant_canais);
 
-    stbi_image_free(stbi_load);
+
+    
+    extern void stbi_image_free(void *retval_from_stbi_load); // limpa a imagem pra evitar memory leak
     return 0;
 }
