@@ -1,0 +1,8 @@
+# Binários e executavéis:
+*.exe
+*.o
+*.out
+
+# Arquivos de Sistemas e IDEs
+.vscode/
+.DS_Store
