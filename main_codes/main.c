@@ -1,14 +1,17 @@
 #define STB_IMAGE_IMPLEMENTATION
-#include "stb_image.h"
+#include "lib\stb_image.h"
 
 #include <stdio.h>
 
 int main(){
     
+    // Declaração das variáveis da imagem
     int largura, altura, quant_canais;
-    stbi_load('C:\IMG to ASCII\main_codes\images\cat-uncanny.jpeg', largura, altura, quant_canais, 0);
+    char* imagem_load = stbi_load("shower_baby.png", &largura, &altura, &quant_canais, 0); // Fixação dos valores
 
-    printf("L:%d, A:%d, C:%d", largura, altura, quant_canais);
+    // Printa os valores que acl função stbi_load() econtrou acima
+    printf("Largura: %d pixels, Altura: %d pixels, Canais: %d\n", largura, altura, quant_canais);
 
+    stbi_image_free(stbi_load);
     return 0;
 }
