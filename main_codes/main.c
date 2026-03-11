@@ -6,7 +6,7 @@
 int main(){
     
     int largura, altura, quant_canais;
-    stbi_load("cat-uncanny.jpeg", largura, altura, quant_canais, 0);
+    stbi_load('C:\IMG to ASCII\main_codes\images\cat-uncanny.jpeg', largura, altura, quant_canais, 0);
 
     printf("L:%d, A:%d, C:%d", largura, altura, quant_canais);
 
