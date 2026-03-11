@@ -23,7 +23,7 @@ O Projeto visa colocar em prática conceitos fundamentais de Ciência da Computa
 
 ## ⚙ - COMO EXECUTAR
 
-Para compilar o projeto, use o comando abaixo:
+Para compilar o projeto, use o comando:
 `gcc main.c -o conversor -lm`
 
 Para executar o programa (Exemplo):
