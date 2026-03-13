@@ -32,6 +32,6 @@ Para executar o programa (Exemplo):
 ## 🧱 - PROGRESSO:
 - [x] Configuração do ambiente e Git
 - [x] Integração da biblioteca `stb_image.h`
-- [ ] Implementação da leitura de pixels
-- [ ] Lógica de Conversão para tons de Cinza
-- [ ] Mapeamento de caracteres ASCII
+- [x] Implementação da leitura de pixels
+- [x] Lógica de Conversão para tons de Cinza
+- [x] Mapeamento de caracteres ASCII
