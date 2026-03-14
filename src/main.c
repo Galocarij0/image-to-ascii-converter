@@ -7,7 +7,7 @@ char pegarCaractere(int linhaAtual, int pLargura, int colunaAtual, unsigned char
     
     int index= (linhaAtual * pLargura + colunaAtual) * 3;
     float luminosidade = ((0.02126 * dados_da_imagem[index]) + (0.7152 * dados_da_imagem[index + 1]) + (0.0722 * dados_da_imagem[index + 2]));
-    char *caracteres = " :-=+*#%@";
+    char *caracteres = "@%#*+=-: ";
     int mapaInt = (int)((luminosidade / 255.0 ) * 8);
     return caracteres[mapaInt];
 }

@@ -27,3 +27,8 @@ else
 fi 
 echo "----------------------------------------------------------------------"
 echo "🏁 Processo encerrado !"
+
+if [ ! -d "resultados" ]; then
+    eho "📂 pasta 'resultados' não encontrada, criando..."
+    mkdir resultados
+fi
