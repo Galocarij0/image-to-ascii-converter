@@ -3,40 +3,41 @@
 
 #include <stdio.h>
 
-int main(){
-    
-    // Declaração das variáveis da imagem
-    int pLargura, pAltura, pQuant_canais;
-    unsigned char *data = stbi_load("shower_baby.png", &pLargura, &pAltura, &pQuant_canais, 3); // Fixação dos valores
+int main(int argc, char* argv[]){
 
 
-    // Printa os valores que acl função stbi_load() econtrou acima
-    printf("%d %d %d \n",pLargura, pAltura, pQuant_canais);
-
-    for (int i = 0; i < pAltura; i++){
-        for ( int j = 0; j < pLargura; j++){
-            
-            // logica de mapeamento de array 1d (data) para array 2d (index)
-            int index= (i * pLargura + j) * 3;
-            
-            // trasnforma os valores rgb anteriores em um unico valor de luminosidade
-            float luminosidade = ((0.02126 * data[index]) + (0.7152 * data[index + 1]) + (0.0722 * data[index + 2]));
-            
-            char *caracteres = "@%#*+=-:. ";
-
-            // Coloca o "nivel" de luminosidade entre 0.00 e 9.00 (para os 9 caracteres que iremos usar)
-            float indiceAscii = ((luminosidade / 255.0 ) * 9);
-            
-            // Transforma o indiceAscii de float para int (pra poder ser um index dos caracteres)
-            int castedIndiceAscii = indiceAscii;
-
-            printf ("%c", caracteres[castedIndiceAscii]);
-
-            // printf("%c", caracteres[indiceAscii]);
-        }
-        printf("%\n");
+    if (argc < 2){
+        printf("Uso correto %s nome_da_imagem.png \n", argv[0]);
+        return 1;
     }
 
-    stbi_image_free(data); // limpa a imagem pra evitar memory leak
+    int pLargura, pAltura, pQuant_canais;
+
+    unsigned char *dadosImagem = stbi_load(argv[1], &pLargura, &pAltura, &pQuant_canais, 3);
+    if (dadosImagem == NULL){
+        printf("NAO SEI O QUE TA ROLANDO MAS NAO TA CARREGANDO A TUA IMAGEM NAO BROTHER \n");
+        return 1;
+    } 
+
+    for (int linhaAtual = 0; linhaAtual < pAltura; linhaAtual += 5){ 
+        for ( int colunaAtual = 0; colunaAtual < pLargura; colunaAtual += 4){
+            
+            int index= (linhaAtual * pLargura + colunaAtual) * 3;
+            
+            float luminosidade = ((0.02126 * dadosImagem[index]) + (0.7152 * dadosImagem[index + 1]) + (0.0722 * dadosImagem[index + 2]));
+            
+            char *caracteres = " :-=+*#%@";
+
+            float mapaLuminosidade = ((luminosidade / 255.0 ) * 9);
+            
+            int mapaLuminosidadeInt = mapaLuminosidade;
+
+            printf ("%c %c", caracteres[mapaLuminosidadeInt], caracteres[mapaLuminosidadeInt]);
+
+        }
+        printf("\n");  
+    }
+
+    stbi_image_free(dadosImagem);
     return 0;
 }

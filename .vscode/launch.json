@@ -8,8 +8,8 @@
       "args": [],
       "stopAtEntry": false,
       "externalConsole": true,
-      "cwd": "c:/Users/kauan/Desktop/IMG to ASCII",
-      "program": "c:/Users/kauan/Desktop/IMG to ASCII/build/Debug/outDebug",
+      "cwd": "c:/Users/kauan/Desktop/IMG to ASCII/main_codes",
+      "program": "c:/Users/kauan/Desktop/IMG to ASCII/main_codes/build/Debug/outDebug",
       "MIMode": "gdb",
       "miDebuggerPath": "gdb",
       "setupCommands": [

@@ -24,10 +24,10 @@ O Projeto visa colocar em prática conceitos fundamentais de Ciência da Computa
 ## ⚙ - COMO EXECUTAR
 
 Para compilar o projeto, use o comando:
-`gcc main.c -o conversor -lm`
+`gcc main.c -lm stb_image.h -o IMG_to_ASCII.exe`
 
 Para executar o programa (Exemplo):
-`./conversor minha_imagem.jpg`
+`./IMG_to_ASCII sua_imagem.jpg`
 
 ## 🧱 - PROGRESSO:
 - [x] Configuração do ambiente e Git
