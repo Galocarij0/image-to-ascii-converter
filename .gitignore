@@ -2,7 +2,7 @@
 *.exe
 *.o
 *.out
-/bin
+bin/
 
 # Arquivos de Sistemas e IDEs
 .vscode/
