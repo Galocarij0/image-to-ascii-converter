@@ -38,7 +38,7 @@ O Projeto conta com scripts de automação para facilitar o desenvolvimento e o 
 Você pode utilizar o programa de duas formas: através da automação em Bash (recomendado) ou manualmente via terminal.
 
 ### 🚀 - AUTOMAÇÃO (PROCESSAMENTO EM LOTE):
-Para compular todas as imagens das pastas suportadas automaticamente:
+Para compilar todas as imagens das pastas suportadas automaticamente:
     `bash ./scripts/processar_pasta.sh`
 
 ### 🛠 - MANUAL:
