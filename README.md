@@ -35,11 +35,18 @@ O Projeto conta com scripts de automação para facilitar o desenvolvimento e o 
 
 ## ⚙ - COMO EXECUTAR
 
-Para compilar o projeto, use o comando:
+Você pode utilizar o programa de duas formas: através da automação em Bash (recomendado) ou manualmente via terminal.
+
+### 🚀 - AUTOMAÇÃO (PROCESSAMENTO EM LOTE):
+Para compular todas as imagens das pastas suportadas automaticamente:
+    `bash ./scripts/processar_pasta.sh`
+
+### 🛠 - MANUAL:
+Para compilar o projeto manualmente, use o comando:
     `gcc src/main.c -lm -o bin/IMG_to_ASCII.exe`
 
-Para executar o programa (Exemplo):
-    `.\bin\IMG_to_ASCII.exe .\imagens_entrada\nome_da_sua_imagem.png`
+Para executar o programa usando uma imagem específica:
+    `./bin/IMG_to_ASCII.exe ./caminho/da/sua/imagem.png`
 
 ## 🧱 - PROGRESSO:
 - [x] Configuração do ambiente e Git
