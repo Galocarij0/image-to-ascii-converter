@@ -33,11 +33,11 @@ int main(int argc, char* argv[]){
 
     unsigned char *dados_da_imagem = stbi_load(argv[1], &pLargura, &pAltura, &pQuant_canais, 3); 
 
-    for (int linhaAtual = 0; linhaAtual < pAltura; linhaAtual += 5){ 
-        for ( int colunaAtual = 0; colunaAtual < pLargura; colunaAtual += 4){
+    for (int linhaAtual = 0; linhaAtual < pAltura; linhaAtual += 2){ 
+        for ( int colunaAtual = 0; colunaAtual < pLargura; colunaAtual += 1){
 
             char p = pegarCaractere(linhaAtual, pLargura, colunaAtual, dados_da_imagem);
-            printf ("%c%c", p, p);
+            printf ("%c", p);
 
         }
         printf("\n");  
