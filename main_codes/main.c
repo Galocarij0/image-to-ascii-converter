@@ -11,20 +11,22 @@ int main(int argc, char* argv[]){
         return 1;
     }
 
+    FILE *arquivo__para_ler = fopen(argv[1],"r");
+    
+    if (arquivo__para_ler == NULL){
+        printf("Arquivo nao encontrado \nVerifique se o arquivo existe e se eh um formato suportado (JPG, PNG, etc.)\n", arquivo__para_ler);
+        return 1;
+    }
     int pLargura, pAltura, pQuant_canais;
 
-    unsigned char *dadosImagem = stbi_load(argv[1], &pLargura, &pAltura, &pQuant_canais, 3);
-    if (dadosImagem == NULL){
-        printf("NAO SEI O QUE TA ROLANDO MAS NAO TA CARREGANDO A TUA IMAGEM NAO BROTHER \n");
-        return 1;
-    } 
+    unsigned char *dados_da_imagem = stbi_load(argv[1], &pLargura, &pAltura, &pQuant_canais, 3); 
 
     for (int linhaAtual = 0; linhaAtual < pAltura; linhaAtual += 5){ 
         for ( int colunaAtual = 0; colunaAtual < pLargura; colunaAtual += 4){
             
             int index= (linhaAtual * pLargura + colunaAtual) * 3;
             
-            float luminosidade = ((0.02126 * dadosImagem[index]) + (0.7152 * dadosImagem[index + 1]) + (0.0722 * dadosImagem[index + 2]));
+            float luminosidade = ((0.02126 * dados_da_imagem[index]) + (0.7152 * dados_da_imagem[index + 1]) + (0.0722 * dados_da_imagem[index + 2]));
             
             char *caracteres = " :-=+*#%@";
 
@@ -38,6 +40,6 @@ int main(int argc, char* argv[]){
         printf("\n");  
     }
 
-    stbi_image_free(dadosImagem);
+    stbi_image_free(dados_da_imagem);
     return 0;
 }
