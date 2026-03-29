@@ -18,7 +18,7 @@ O Projeto visa colocar em prática conceitos fundamentais de Ciência da Computa
 ## 📋 - COMO FUNCIONA:
 1. **Carregamento:** A imagem é carregada na memória como um array de bytes (RGB).
 2. **Escala de Cinza:** Cada pixel é convertido para um valor de luminosidade.
-3. **MapeamentoL** O valor do brilho (0-255) é mapeado para um caractere ASCII (ex: '@' para escuro e '-' para claro).
+3. **Mapeamento:** O valor do brilho (0-255) é mapeado para um caractere ASCII (ex: '@' para escuro e '-' para claro).
 4. **Output:** A arte final é exibido no terminal ou guardada num ficheiro '.txt'
 
 ## 🚀 - AUTOMAÇÃO COM BASH:
